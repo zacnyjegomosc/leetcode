@@ -1,3 +1,5 @@
+"""This is the most optimal way, in my opinion. And it works."""
+
 class Solution:
   @staticmethod
   def shuffle(array_of_ints: list[int], len_of_arr) -> list[int]:
@@ -20,13 +22,13 @@ class Solution:
     sorted_arr.sort(key=lambda key: -arr[key])
     next_even_item = Solution.shuffle(sorted_arr, len_of_arr)
 
-    # Allocate False arrays (TODO: poor memory management)
-    odd_steps = [False] * len_of_arr
-    even_steps = [False] * len_of_arr
+    # Allocate arrays of zeros (TODO: poor memory management)
+    odd_steps = [0] * len_of_arr
+    even_steps = [0] * len_of_arr
 
     # Mark end of arrays
-    odd_steps[len_of_arr - 1] = True
-    even_steps[len_of_arr - 1] = True
+    odd_steps[len_of_arr - 1] = 1
+    even_steps[len_of_arr - 1] = 1
 
     for element in range(len_of_arr - 2, -1, -1):
       # Mark steps (increment and decrement)
