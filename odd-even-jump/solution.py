@@ -1,3 +1,5 @@
+"""To slow, it's not good enough implementation. It works, but it's terrible."""
+
 class Solution:
   def oddEvenJumps(self, arr: list[int]) -> int:
     result = 1
