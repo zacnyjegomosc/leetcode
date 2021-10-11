@@ -14,9 +14,6 @@ class KthLargest:
     self.nums = sorted(nums, reverse=True)[:k]
     heapq.heapify(self.nums)
 
-    while len(self.nums) > k:
-      heapq.heappop(self.nums)
-
   def add(self, val: int) -> int or None:
     heapq.heappush(self.nums, val)
 
